@@ -3,10 +3,11 @@
 
 import browserSync from 'browser-sync';
 import historyApiFallback from 'connect-history-api-fallback';
+var port = (process.env.PORT || 3000);
 
 // Run Browsersync
 browserSync({
-  port: 3000,
+  port: port,
   ui: {
     port: 3001
   },
