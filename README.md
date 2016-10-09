@@ -1,0 +1,1 @@
+This is a  simple pomodoro style application. It is work in progress at this point in time.
