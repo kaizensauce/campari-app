@@ -8,7 +8,7 @@
     "start-message": "babel-node tools/startMessage.js",
     "prestart-dev": "npm-run-all --parallel start-message remove-dist",
     "start-dev": "npm-run-all --parallel test:watch open:src lint:watch",
-    "start": "npm open:dist",
+    "start": "npm run open:dist",
     "open:src": "babel-node tools/srcServer.js",
     "open:dist": "babel-node tools/distServer.js",
     "lint": "esw webpack.config.* src tools --color",
