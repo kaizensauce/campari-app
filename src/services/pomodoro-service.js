@@ -6,7 +6,7 @@ class PomodoroService {
         const myInit = { method: 'GET',
                mode: 'cors',
                'Content-Type': 'application/json' };
-        fetch("http://localhost:30001/pomodoro", myInit).then(function(response){
+        fetch("https://campari-api.herokuapp.com/pomodoro/", myInit).then(function(response){
             return response.json();
             }).then(json=>{
                 let pomodoros = Object.assign([], json.data);
@@ -27,7 +27,7 @@ class PomodoroService {
                 "Content-Type": "application/json; charset=UTF-8"},
             body: content 
         };
-        fetch("http://localhost:30001/pomodoro", myInit).then(function(response){
+        fetch("https://campari-api.herokuapp.com/pomodoro/", myInit).then(function(response){
             return response.json();
             }).then(json=>{
                 let pomodoros = Object.assign({}, json.data);
@@ -48,7 +48,7 @@ class PomodoroService {
                 "Content-Type": "application/json; charset=UTF-8"},
             body: content 
         };
-        fetch("http://localhost:30001/pomodoro/" + pomodoro._id, myInit).then(function(response){
+        fetch("https://campari-api.herokuapp.com/pomodoro/" + pomodoro._id, myInit).then(function(response){
             return response.json();
             }).then(json=>{
                 let pomodoros = Object.assign({}, json.data);
@@ -69,7 +69,7 @@ class PomodoroService {
             headers: {
                 "Content-Type": "application/json; charset=UTF-8"} 
         };
-        fetch("http://localhost:30001/pomodoro/" + pomodoro._id, myInit)
+        fetch("https://campari-api.herokuapp.com/pomodoro/" + pomodoro._id, myInit)
         .then(function(response){
             resolve("Pomodoro deleted"+ response);
         })
