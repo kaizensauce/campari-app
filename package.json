@@ -25,6 +25,7 @@
   "author": "Nicholas Bonner",
   "license": "MIT",
   "dependencies": {
+    "express": "4.14.0",
     "json-loader": "0.5.4",
     "object-assign": "4.1.0",
     "react": "15.2.0",
