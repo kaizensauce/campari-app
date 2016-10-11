@@ -1,6 +1,6 @@
 {
   "name": "ks-pomdoro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "scripts": {
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
