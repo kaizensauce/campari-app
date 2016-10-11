@@ -24,8 +24,8 @@
     "version:major": "npm version major",
     "version:minor": "npm version minor",
     "version:patch": "npm version patch",
-    "patch:deploy": "version:patch && push:origin && push:heroku && start campari-app.herokuapp.com",
-    "minor:deploy": "version:minor && push:origin && push:heroku && start campari-app.herokuapp.com",
+    "patch:deploy": "npm run version:patch && npm run push:origin && npm run push:heroku && start campari-app.herokuapp.com",
+    "minor:deploy": "npm run version:minor && npm run push:origin && npm run push:heroku && start campari-app.herokuapp.com",
     "push:origin": "git push --tags origin HEAD:master",
     "push:heroku": "git push heroku master"
   },
