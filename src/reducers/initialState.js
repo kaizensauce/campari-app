@@ -8,7 +8,8 @@ export default {
       taskSummary: '',
       debug:true,
       confirmationNeeded: false,
-      hasCompleted: false
+      hasCompleted: false,
+      isRunning: false
     },
     pomodoros:[]
   }
