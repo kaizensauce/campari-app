@@ -55,10 +55,10 @@ class PomodoroForm extends React.Component{
         return(
             <div className="pomodoro-form">
                 {this.props.debug ? <div>{JSON.stringify(this.props)}</div> : null}
-                <div className="task-input"><span>$</span><input type="text" value={this.props.taskSummary} onChange={this.taskSummaryChanged}></input>
-                <button className={ this.props.current.isRunning ? "running" : "stopped" } type="submit" value="StartCountdown" onClick={this.startCountdownClick}/></div>
-                <div className="countdown">{dateHelper.convertSecondsToMinutesAndSeconds(this.props.current.timeLeft)}</div>
+                <div className="task-input"><div className='input-prompt'></div><textarea type="text" value={this.props.taskSummary} onChange={this.taskSummaryChanged}></textarea>
                 
+                <div className="countdown">{dateHelper.convertSecondsToMinutesAndSeconds(this.props.current.timeLeft)}</div>
+                <button className={ this.props.current.isRunning ? "running" : "stopped" } type="submit" value="StartCountdown" onClick={this.startCountdownClick}/></div>
                 {this.props.current.confirmationNeeded ? 
                 <div>
                     <span>Time's up. Please confirm you have completed a full pomodoro</span>

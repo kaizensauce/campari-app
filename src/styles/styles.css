@@ -7,13 +7,29 @@
 
 img{ width:450px; }
 
-.task-input input, .task-input span {
-    background-color: #111;
+.task-input textarea, .task-input span {
+    display:block;
+    background-color: black;
     border: none;
     color: white;
-    width: 300px;
-    height:50px;
+    width: 100pc;
+    height:200px;
     font-size: 30px;
+}
+
+.task-input textarea{
+    display:block;
+    background-color: black;
+    border: none;
+    color: white;
+    width: 400px;
+    height:200px;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
 }
 
 html{
@@ -62,7 +78,7 @@ button:focus {
 }
 
 input.taskSummary {
-    background-color: #111;
+    background-color: black;
     border: none;
     color: white;
     width: 90%;
@@ -91,6 +107,8 @@ button{
   width:50px;
   padding: 14px;
   background-size:50px;
+  margin-left: 40px;
+  padding-bottom: 0px;
 }
 
 input.refresh, input.delete-all {
