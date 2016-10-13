@@ -17,8 +17,6 @@ class PomodoroHistoryForm extends React.Component{
         this.props.bigDelete(this.props.pomodoros);
     }
 
-
-
     render(){
         const pomodoros = this.props.pomodoros;
         return(
@@ -26,15 +24,19 @@ class PomodoroHistoryForm extends React.Component{
                 <input type="submit" className="refresh" value="Refresh History" onClick={this.loadPomodorosClick}/>
                 <input className="bigDelete" type="submit" value="BigDelete" onClick={this.bigDeleteClick}/>
                 <div>
-                    {pomodoros.map(function(pomodoro, i){
-                 return <div className={'completed-' + pomodoro.hasCompleted} key={i}><span>{dateHelper.getFormattedTime(pomodoro.startTime)} --> {dateHelper.getFormattedTime(pomodoro.endTime)}</span> <span>{pomodoro.taskSummary}  </span><span>({dateHelper.convertSecondsToMinutesAndSeconds(pomodoro.timeLeft)})</span></div>;
+                    {pomodoros.filter(p=> new Date(p.startTime).getDay() == new Date().getDay()).map(function(pomodoro, i){
+
+                 return <div className={'completed-' + pomodoro.hasCompleted} key={i}>
+                            <span>{dateHelper.getFormattedTime(pomodoro.startTime)} --> {dateHelper.getFormattedTime(pomodoro.endTime)}</span> 
+                            <span>{pomodoro.taskSummary}  </span>
+                            <span>({dateHelper.convertSecondsToMinutesAndSeconds(pomodoro.timeLeft)})</span>
+                        </div>;
                  })}                
                  </div>
             </div>
         );
     }
 }
-
 
 PomodoroHistoryForm.propTypes = {
   pomodoros: PropTypes.array.isRequired,
