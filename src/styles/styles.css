@@ -1,10 +1,9 @@
 #app{
     background-color:black;
     color: white;
+        margin-top: 50px;
+    margin-left: 25px;
 }
-
-
-
 
 img{ width:450px; }
 
@@ -36,7 +35,10 @@ body {
 
 /* Rules below not implemented in browsers yet */
 -o-user-select: none;
-  
+}
+
+.history{
+  margin-top:50px;
 }
 
 input:focus {outline:0;}
@@ -91,11 +93,10 @@ button{
   background-size:50px;
 }
 
-button.Refresh{
-  background-color: black;
-  color: white;
-  width:150px;
-  height:75px;
+input.refresh, input.delete-all {
+    background-color: black;
+    color: white;
+    border: none;
 }
 
 button.running{

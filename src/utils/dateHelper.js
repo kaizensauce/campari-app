@@ -12,11 +12,11 @@ export default class DateHelper {
 
   static convertSecondsToMinutesAndSeconds(rawSeconds){
     let minutes = Math.floor(rawSeconds  / 60);
-    let seconds = rawSeconds - (minutes * 60);
+    let seconds = Math.floor(rawSeconds - (minutes * 60));
 
-    if (minutes < 10) {minutes = "0"+minutes;}
-    if (seconds < 10) {seconds = "0"+seconds;}
-    return minutes+':'+Math.round(seconds);
+    var minutesString = minutes < 10 ?  "0" + minutes : minutes;
+    var secondsString = seconds < 10 ?  "0" + seconds : seconds;
+    return minutesString+':'+secondsString;
   }
 
   static addMinutes(date, seconds) {

@@ -20,9 +20,7 @@ class PomodoroHistoryForm extends React.Component{
     render(){
         const pomodoros = this.props.pomodoros;
         return(
-            <div>
-                <input type="submit" className="refresh" value="Refresh History" onClick={this.loadPomodorosClick}/>
-                <input className="bigDelete" type="submit" value="BigDelete" onClick={this.bigDeleteClick}/>
+            <div className="history">
                 <div>
                     {pomodoros.filter(p=> new Date(p.startTime).getDay() == new Date().getDay()).map(function(pomodoro, i){
 
@@ -33,6 +31,8 @@ class PomodoroHistoryForm extends React.Component{
                         </div>;
                  })}                
                  </div>
+                 <input type="submit" className="refresh" value="Refresh History" onClick={this.loadPomodorosClick}/>
+                <input className="delete-all" type="submit" value="DeleteAll" onClick={this.bigDeleteClick}/>
             </div>
         );
     }

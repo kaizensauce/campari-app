@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import dateHelper from '../utils/dateHelper';
-import ToggleButton from 'react-toggle-button';
 
 class PomodoroForm extends React.Component{
     
@@ -54,10 +53,7 @@ class PomodoroForm extends React.Component{
 
     render(){
         return(
-            <div>
-                <div className="debug-switch">
-                    <ToggleButton value={this.props.debug} onToggle={this.toggleDebug}/>
-                </div>
+            <div className="pomodoro-form">
                 {this.props.debug ? <div>{JSON.stringify(this.props)}</div> : null}
                 <div className="task-input"><span>$</span><input type="text" value={this.props.taskSummary} onChange={this.taskSummaryChanged}></input>
                 <button className={ this.props.current.isRunning ? "running" : "stopped" } type="submit" value="StartCountdown" onClick={this.startCountdownClick}/></div>
